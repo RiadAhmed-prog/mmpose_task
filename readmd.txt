@@ -1,0 +1,18 @@
+1. make a folder named "checkpoints" on mmpose directory
+2. download weights "faster_rcnn_r50_fpn_1x_coco_20200130-047c8118.pth" and "hrnet_w48_coco_wholebody_384x288_dark-f5726563_20200918.pth"
+and put them on checkpoints folder
+3. make a folder named "videos" on demo directory and put given four(4) videos on that folder.
+4. download two given code named "top_down_video_demo_with_mmdet_mod.py" and "video_generate.py" from github link and put these 
+code on demo folder directory.
+
+
+
+run this code on terminal:
+
+python demo/top_down_video_demo_with_mmdet_mod.py \
+    demo/mmdetection_cfg/faster_rcnn_r50_fpn_coco.py \
+    checkpoints/faster_rcnn_r50_fpn_1x_coco_20200130-047c8118.pth \
+    configs/wholebody/2d_kpt_sview_rgb_img/topdown_heatmap/coco-wholebody/hrnet_w48_coco_wholebody_384x288_dark_plus.py \
+    checkpoints/hrnet_w48_coco_wholebody_384x288_dark-f5726563_20200918.pth \
+    --video-path "demo/videos/" \
+    --out-video-root vis_results
